@@ -135,6 +135,8 @@ new_X = alg.fit_transform(X_array)
 ### Write Data to .js File
 
 with open('data.js', 'w') as f:
+
+    f.write("\n// AUTO GENERATED FILE\n\n")
     
     f.write("var points = [\n")
     for x in new_X:
