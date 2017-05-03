@@ -3,6 +3,8 @@
 Using [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding) to
 visualize data collected from the [CyRanch App](https://github.com/sshh12/CyRanch-App-Server).
 
+[Live Code](https://sshh.io/webapps/studentvis/main.html)
+
 ## Built Using:
 
 * [db.py](https://github.com/yhat/db.py)
