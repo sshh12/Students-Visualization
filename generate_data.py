@@ -1,6 +1,5 @@
 from db import DB
 
-from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import numpy as np
 
@@ -23,11 +22,11 @@ class_types = { # Keywords used to determine class topic
     "engineering": ["manufac"," manfc","princ flo des","auto tech","pr soln","arch ", "interior design"],
     "art": ["art","band","animation","theater","bnd ","orchest","aud vid","chrl ","music","choir","a/v","av pro","voc ens","symph", "th. pro", " strings"],
     "english":["journal","eng ","creative write", "english","debate"],
-    "science":["chemistry","phy/chem","web tech","tch sys","livestock","electr","vet med","wldlif fish eco","prof comm","sci","robot","physics","antmy","physlgy","biology","sociology","animal","psychology", "chem ","bio ","medical","prin ag fd nt r","food tech","com prog"],
+    "science":["phys ", "chemistry","phy/chem","web tech","tch sys","livestock","electr","vet med","wldlif fish eco","prof comm","sci","robot","physics","antmy","physlgy","biology","sociology","animal","psychology", "chem ","bio ","medical","prin ag fd nt r","food tech","com prog"],
     "math":["geom","cal-","bank financ","calc","geometry","pre cal","algebra","statistics","alg ","accounting"],
     "language":["spanish","french","latin","german"],
     "sports":["ath ","athletics","phys ed","athlet","cheerleading","dance","sports"],
-    "other":["life nutr well","ipc ics","car port","rdi 180","rotc","spt ent mk","stu asst","child ","intro to cos","rest mgmt","rdi 180","ed trng"," bus", "bus "," mgt","pace","money","p a l i","health","act/sat","fash des","child devlp","fnd pers fit","teen leadership","interpers std","inst ed trg","hum svc"]
+    "other":["bim ", "life nutr well","ipc ics","car port","rdi 180","rotc","spt ent mk","stu asst","child ","intro to cos","rest mgmt","rdi 180","ed trng"," bus", "bus "," mgt","pace","money","p a l i","health","act/sat","fash des","child devlp","fnd pers fit","teen leadership","interpers std","inst ed trg","hum svc"]
 }
 
 def get_class_type(name):
@@ -37,7 +36,7 @@ def get_class_type(name):
         for word in kwords:
             if word in name:
                 return subject
-    
+
     return "other"
 
 data = {}
@@ -112,6 +111,7 @@ for id_ in ids:
     features.append(avg_nonzero(data[id_]["grades"]["art"]))
     features.append(avg_nonzero(data[id_]["grades"]["sports"]))
     features.append(avg_nonzero(data[id_]["grades"]["socialstudies"]))
+    features.append(avg_nonzero(data[id_]["grades"]["engineering"]))
     X.append(features)
 
     # Hashing used to for privacy (although bruteforcing possible b/c ids are short)
@@ -127,7 +127,6 @@ for id_ in ids:
 
 X_array = np.array(X)
 
-#alg = PCA(n_components=3)
 alg = TSNE(n_components=3, learning_rate=100, perplexity=35, n_iter=6000)
 
 new_X = alg.fit_transform(X_array)

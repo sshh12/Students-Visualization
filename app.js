@@ -159,7 +159,8 @@ function setColor(c) {
             wrapColor("Language", subcolors[3]) + " " +
             wrapColor("Art", subcolors[4]) + " " +
             wrapColor("Sports", subcolors[5]) + " " +
-            wrapColor("Social Studies", subcolors[6]);
+            wrapColor("Social Studies", subcolors[6])  + " " +
+			wrapColor("Engineering", subcolors[7]);
 
     } else if (coloring === "lowest") {
 
@@ -171,7 +172,8 @@ function setColor(c) {
             wrapColor("Language", subcolors[3]) + " " +
             wrapColor("Art", subcolors[4]) + " " +
             wrapColor("Sports", subcolors[5]) + " " +
-            wrapColor("Social Studies", subcolors[6]);
+            wrapColor("Social Studies", subcolors[6])  + " " +
+			wrapColor("Engineering", subcolors[7]);
 
     } else if (coloring === "dist") {
 
