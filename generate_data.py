@@ -20,13 +20,13 @@ db = DB(username="",
 class_types = { # Keywords used to determine class topic
     "socialstudies": ["hist","gov","macro eco","street law","human geog","geog","wd area","economics"],
     "engineering": ["manufac"," manfc","princ flo des","auto tech","pr soln","arch ", "interior design"],
-    "art": ["art","band","animation","theater","bnd ","orchest","aud vid","chrl ","music","choir","a/v","av pro","voc ens","symph", "th. pro", " strings"],
-    "english":["journal","eng ","creative write", "english","debate"],
+    "art": [" orch","art","band","animation","theater","bnd ","orchest","aud vid","chrl ","music","choir","a/v","av pro","voc ens","symph", "th. pro", " strings"],
+    "english":["journl ","journal","eng ","creative write", "english","debate"],
     "science":["phys ", "chemistry","phy/chem","web tech","tch sys","livestock","electr","vet med","wldlif fish eco","prof comm","sci","robot","physics","antmy","physlgy","biology","sociology","animal","psychology", "chem ","bio ","medical","prin ag fd nt r","food tech","com prog"],
     "math":["geom","cal-","bank financ","calc","geometry","pre cal","algebra","statistics","alg ","accounting"],
     "language":["spanish","french","latin","german"],
     "sports":["ath ","athletics","phys ed","athlet","cheerleading","dance","sports"],
-    "other":["bim ", "life nutr well","ipc ics","car port","rdi 180","rotc","spt ent mk","stu asst","child ","intro to cos","rest mgmt","rdi 180","ed trng"," bus", "bus "," mgt","pace","money","p a l i","health","act/sat","fash des","child devlp","fnd pers fit","teen leadership","interpers std","inst ed trg","hum svc"]
+    "other":["sec invest","prin of human"," esl","bim ", "life nutr well","ipc ics","car port","180","rotc","spt ent mk","stu asst","child ","intro to cos","rest mgmt","rdi 180","ed trng"," bus", "bus "," mgt","pace","money","p a l i","health","act/sat","fash des","child devlp","fnd pers fit","teen leadership","interpers std","inst ed trg","hum svc"]
 }
 
 def get_class_type(name):
