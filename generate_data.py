@@ -22,9 +22,9 @@ class_types = { # Keywords used to determine class topic
     "engineering": ["manufac"," manfc","princ flo des","auto tech","pr soln","arch ", "interior design"],
     "art": [" orch","art","band","animation","theater","bnd ","orchest","aud vid","chrl ","music","choir","a/v","av pro","voc ens","symph", "th. pro", " strings"],
     "english":["journl ","journal","eng ","creative write", "english","debate"],
-    "science":["phys ", "chemistry","phy/chem","web tech","tch sys","livestock","electr","vet med","wldlif fish eco","prof comm","sci","robot","physics","antmy","physlgy","biology","sociology","animal","psychology", "chem ","bio ","medical","prin ag fd nt r","food tech","com prog"],
+    "science":["chemsitry","phys ", "chemistry","phy/chem","web tech","tch sys","livestock","electr","vet med","wldlif fish eco","prof comm","sci","robot","physics","antmy","physlgy","biology","sociology","animal","psychology", "chem ","bio ","medical","prin ag fd nt r","food tech","com prog"],
     "math":["geom","cal-","bank financ","calc","geometry","pre cal","algebra","statistics","alg ","accounting"],
-    "language":["spanish","french","latin","german"],
+    "language":["span iv","spanish","french","latin","german"],
     "sports":["ath ","athletics","phys ed","athlet","cheerleading","dance","sports"],
     "other":["sec invest","prin of human"," esl","bim ", "life nutr well","ipc ics","car port","180","rotc","spt ent mk","stu asst","child ","intro to cos","rest mgmt","rdi 180","ed trng"," bus", "bus "," mgt","pace","money","p a l i","health","act/sat","fash des","child devlp","fnd pers fit","teen leadership","interpers std","inst ed trg","hum svc"]
 }
@@ -127,7 +127,7 @@ for id_ in ids:
 
 X_array = np.array(X)
 
-alg = TSNE(n_components=3, learning_rate=100, perplexity=35, n_iter=6000)
+alg = TSNE(n_components=3, learning_rate=100, perplexity=35, n_iter=8000)
 
 new_X = alg.fit_transform(X_array)
 
