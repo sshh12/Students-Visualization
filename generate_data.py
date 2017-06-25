@@ -82,10 +82,13 @@ for index, row in db.tables.grades.all().iterrows():
 
 for index, row in db.tables.demo.all().iterrows():
     
-    data[row.user_id]["name"] = row.name
-    data[row.user_id]["gender"] = row.gender
-    data[row.user_id]["language"] = row.language
-    data[row.user_id]["gradelevel"] = int(row.gradelevel)
+	try:
+		data[row.user_id]["name"] = row.name
+		data[row.user_id]["gender"] = row.gender
+		data[row.user_id]["language"] = row.language
+		data[row.user_id]["gradelevel"] = int(row.gradelevel)
+	except Exception as e:
+		print(e)
 
 ### Create Features and Transform Data
 
@@ -114,9 +117,9 @@ for id_ in ids:
     features.append(avg_nonzero(data[id_]["grades"]["engineering"]))
     X.append(features)
 
-    # Hashing used to for privacy (although bruteforcing possible b/c ids are short)
-    h = hashlib.sha256()
-    h.update(id_.replace("s",""))
+    # Hashing used to for privacy (although bruteforcing easily possible b/c ids are short)
+    h = hashlib.sha256() 
+    h.update(id_.replace("s", ""))
 
     label = []
     label.append(h.hexdigest())

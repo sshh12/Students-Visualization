@@ -26,9 +26,6 @@ var centY = 0;
 var centZ = 0;
 var scl = .3;
 
-// Animation/Scale Constant
-var pointScale = 50000; 
-
 // Options
 var selected = [];
 var coloring = 'random';
@@ -68,6 +65,9 @@ function centerPoints() { // Verify and Correct Points to be around (0,0,0)
         points[i][0] -= centX;
         points[i][1] -= centY;
         points[i][2] -= centZ;
+		points[i][0] *= 100;
+        points[i][1] *= 100;
+        points[i][2] *= 100;
     }
 
 }
@@ -90,13 +90,6 @@ function draw() { // Update Screen
             push();
 
             translate(points[i][0], points[i][1], points[i][2]);
-
-            if (pointScale > 0) { // Animation
-                points[i][0] *= 1.06;
-                points[i][1] *= 1.06;
-                points[i][2] *= 1.06;
-                pointScale -= 1;
-            }
 
             var color = getColor(i);
             specularMaterial(color[0], color[1], color[2]);
