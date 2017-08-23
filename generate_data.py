@@ -1,3 +1,10 @@
+
+# coding: utf-8
+
+# In[ ]:
+
+## Imports
+
 from db import DB
 
 from sklearn.manifold import TSNE
@@ -6,7 +13,10 @@ import numpy as np
 import hashlib
 import random
 
-### Connect to Database
+
+# In[ ]:
+
+## Connect to Database
 
 db = DB(username="",
         password="",
@@ -15,7 +25,10 @@ db = DB(username="",
         dbtype="",
         dbname="")
 
-### Download and Parse Data
+
+# In[ ]:
+
+## Categories
 
 class_types = { # Keywords used to determine class topic
     "socialstudies": ["hist","gov","macro eco","street law","human geog","geog","wd area","economics"],
@@ -38,6 +51,11 @@ def get_class_type(name):
                 return subject
 
     return "other"
+
+
+# In[ ]:
+
+## Collect Data
 
 data = {}
 
@@ -82,15 +100,18 @@ for index, row in db.tables.grades.all().iterrows():
 
 for index, row in db.tables.demo.all().iterrows():
     
-	try:
-		data[row.user_id]["name"] = row.name
-		data[row.user_id]["gender"] = row.gender
-		data[row.user_id]["language"] = row.language
-		data[row.user_id]["gradelevel"] = int(row.gradelevel)
-	except Exception as e:
-		print(e)
+    try:
+        data[row.user_id]["name"] = row.name
+        data[row.user_id]["gender"] = row.gender
+        data[row.user_id]["language"] = row.language
+        data[row.user_id]["gradelevel"] = int(row.gradelevel)
+    except Exception as e:
+        print(e)
 
-### Create Features and Transform Data
+
+# In[ ]:
+
+## Analyze
 
 X = []
 labels = []
@@ -134,7 +155,10 @@ alg = TSNE(n_components=3, learning_rate=100, perplexity=35, n_iter=8000)
 
 new_X = alg.fit_transform(X_array)
 
-### Write Data to .js File
+
+# In[ ]:
+
+## Save
 
 with open('data.js', 'w') as f:
 
@@ -154,3 +178,4 @@ with open('data.js', 'w') as f:
     for row in X:
         f.write(repr(row) + ",\n")
     f.write("];\n\n")
+
