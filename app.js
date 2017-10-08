@@ -1,4 +1,4 @@
-var colors = { // R,G,B
+let colors = { // R,G,B
     'red': [211, 47, 47],
     'blue': [57, 73, 171],
     'green': [56, 142, 60],
@@ -11,25 +11,25 @@ var colors = { // R,G,B
 };
 
 // HTML elements
-var canvas;
-var userinput;
-var colorkey;
-var filtersel;
+let canvas;
+let userinput;
+let colorkey;
+let filtersel;
 
 // Angle/Position vars
-var camX = 0;
-var camY = 120;
-var rotX = 0;
-var rotY = 0;
-var centX = 0;
-var centY = 0;
-var centZ = 0;
-var scl = .3;
+let camX = 0,
+    camY = 120;
+let rotX = 0,
+    rotY = 0;
+let centX = 0,
+    centY = 0,
+    centZ = 0;
+let scl = .3;
 
 // Options
-var selected = [];
-var coloring = 'random';
-var filtering = 'none';
+let selected = [];
+let coloring = 'random';
+let filtering = 'none';
 
 function setup() { // init()
 
@@ -49,11 +49,11 @@ function setup() { // init()
 
 function centerPoints() { // Verify and Correct Points to be around (0,0,0)
 
-    var sumX = 0;
-    var sumY = 0;
-    var sumZ = 0;
+    let sumX = 0,
+        sumY = 0,
+        sumZ = 0;
 
-    for (var i = 0; i < points.length; i++) {
+    for (let i = 0; i < points.length; i++) {
         sumX += points[i][0];
         sumY += points[i][1];
         sumZ += points[i][2];
@@ -63,7 +63,7 @@ function centerPoints() { // Verify and Correct Points to be around (0,0,0)
     centY = sumY / points.length;
     centZ = sumZ / points.length;
 
-    for (var i = 0; i < points.length; i++) {
+    for (let i = 0; i < points.length; i++) {
         points[i][0] -= centX;
         points[i][1] -= centY;
         points[i][2] -= centZ;
@@ -86,7 +86,7 @@ function draw() { // Update Screen
 
     ambientLight(220);
 
-    for (var i = 0; i < points.length; i++) {
+    for (let i = 0; i < points.length; i++) {
 
         if (notFiltered(i)) {
 
@@ -94,7 +94,7 @@ function draw() { // Update Screen
 
             translate(points[i][0], points[i][1], points[i][2]);
 
-            var color = getColor(i);
+            let color = getColor(i);
             specularMaterial(color[0], color[1], color[2]);
 
             if (selected.includes(i)) {
@@ -157,66 +157,66 @@ function setColor(c) {
 
     } else if (coloring === "highest") {
 
-        var subcolors = Object.values(colors);
+        let subcolors = Object.values(colors);
 
         colorkey.innerHTML = wrapColor("Science", subcolors[0]) + " " +
-                             wrapColor("Math", subcolors[1]) + " " +
-                             wrapColor("English", subcolors[2]) + " " +
-                             wrapColor("Language", subcolors[3]) + " " +
-                             wrapColor("Art", subcolors[4]) + " " +
-                             wrapColor("Sports", subcolors[5]) + " " +
-                             wrapColor("Social Studies", subcolors[6]) + " " +
-                             wrapColor("Engineering", subcolors[7]);
+            wrapColor("Math", subcolors[1]) + " " +
+            wrapColor("English", subcolors[2]) + " " +
+            wrapColor("Language", subcolors[3]) + " " +
+            wrapColor("Art", subcolors[4]) + " " +
+            wrapColor("Sports", subcolors[5]) + " " +
+            wrapColor("Social Studies", subcolors[6]) + " " +
+            wrapColor("Engineering", subcolors[7]);
 
     } else if (coloring === "lowest") {
 
-        var subcolors = Object.values(colors);
+        let subcolors = Object.values(colors);
 
         colorkey.innerHTML = wrapColor("Science", subcolors[0]) + " " +
-                             wrapColor("Math", subcolors[1]) + " " +
-                             wrapColor("English", subcolors[2]) + " " +
-                             wrapColor("Language", subcolors[3]) + " " +
-                             wrapColor("Art", subcolors[4]) + " " +
-                             wrapColor("Sports", subcolors[5]) + " " +
-                             wrapColor("Social Studies", subcolors[6]) + " " +
-                             wrapColor("Engineering", subcolors[7]);
+            wrapColor("Math", subcolors[1]) + " " +
+            wrapColor("English", subcolors[2]) + " " +
+            wrapColor("Language", subcolors[3]) + " " +
+            wrapColor("Art", subcolors[4]) + " " +
+            wrapColor("Sports", subcolors[5]) + " " +
+            wrapColor("Social Studies", subcolors[6]) + " " +
+            wrapColor("Engineering", subcolors[7]);
 
     } else if (coloring === "dist") {
 
         colorkey.innerHTML = wrapColor("Close", colors.blue) + " " +
-                             wrapColor("to", colors.green) + " " +
-                             wrapColor("Far", colors.red);
+            wrapColor("to", colors.green) + " " +
+            wrapColor("Far", colors.red);
 
     } else if (coloring === "gender") {
 
         colorkey.innerHTML = wrapColor("Male", colors.blue) + " " +
-                             wrapColor("Female", colors.pink);
+            wrapColor("Female", colors.pink);
 
     } else if (coloring === "grade") {
 
         colorkey.innerHTML = wrapColor("<9", colors.yellow) + " " +
-                             wrapColor("9", colors.blue) + " " +
-                             wrapColor("10", colors.green) + " " +
-                             wrapColor("11", colors.purple) + " " +
-                             wrapColor("12", colors.red);
+            wrapColor("9", colors.blue) + " " +
+            wrapColor("10", colors.green) + " " +
+            wrapColor("11", colors.purple) + " " +
+            wrapColor("12", colors.red);
 
     } else if (coloring === "language") {
 
         colorkey.innerHTML = wrapColor("English", colors.blue) + " " +
-                             wrapColor("Spanish", colors.yellow) + " " +
-                             wrapColor("Chinese", colors.red) + " " +
-                             wrapColor("Arabic", colors.green) + " " +
-                             wrapColor("Vietnamese", colors.orange) + " " +
-                             wrapColor("Bengali", colors.purple) + " " +
-                             wrapColor("Indonesian", colors.teal) + " " +
-                             wrapColor("Russian", colors.pink);
+            wrapColor("Spanish", colors.yellow) + " " +
+            wrapColor("Chinese", colors.red) + " " +
+            wrapColor("Arabic", colors.green) + " " +
+            wrapColor("Vietnamese", colors.orange) + " " +
+            wrapColor("Bengali", colors.purple) + " " +
+            wrapColor("Indonesian", colors.teal) + " " +
+            wrapColor("Russian", colors.pink);
 
     }
 
 }
 
-var dists = [];
-var maxDist = 0;
+let dists = [];
+let maxDist = 0;
 
 function getColor(index) {
 
@@ -226,12 +226,12 @@ function getColor(index) {
 
     } else if (coloring === "highest") {
 
-        var d = features[index];
+        let d = features[index];
         return Object.values(colors)[d.indexOf(max(d))];
 
     } else if (coloring === "lowest") {
 
-        var d = features[index].concat([1000]);
+        let d = features[index].concat([1000]);
         return Object.values(colors)[d.indexOf(min(d.filter(Boolean)))];
 
     } else if (coloring === "dist" && selected.length >= 1) {
@@ -241,12 +241,12 @@ function getColor(index) {
             maxDist = 0;
             for (let point of points) {
 
-                var dist = 0;
+                let dist = 0;
                 for (let sIndex of selected) {
 
-                    dist += (pow(point[0]                  - points[sIndex][0], 2) +
-                             pow(point[1] - points[sIndex][1], 2) +
-                             pow(point[2] - points[sIndex][2], 2));
+                    dist += (pow(point[0] - points[sIndex][0], 2) +
+                        pow(point[1] - points[sIndex][1], 2) +
+                        pow(point[2] - points[sIndex][2], 2));
 
                 }
 
@@ -257,15 +257,15 @@ function getColor(index) {
 
         }
 
-        var colorDegree = round((1 - dists[index] / maxDist) * 240);
+        let colorDegree = round((1 - dists[index] / maxDist) * 240);
 
-        var col = color('hsl(' + colorDegree + ', 100%, 50%)'); // Heatmap Style Coloring
+        let col = color('hsl(' + colorDegree + ', 100%, 50%)'); // Heatmap Style Coloring
 
         return [red(col), green(col), blue(col)];
 
     } else if (coloring === "gender") {
 
-        var gender = labels[index][1];
+        let gender = labels[index][1];
         if (gender === "male") {
             return colors.blue;
         } else if (gender === "female") {
@@ -274,7 +274,7 @@ function getColor(index) {
 
     } else if (coloring === "grade") {
 
-        var grade = labels[index][3];
+        let grade = labels[index][3];
         if (grade < 9) {
             return colors.yellow;
         } else if (grade === 9) {
@@ -289,7 +289,7 @@ function getColor(index) {
 
     } else if (coloring === "language") {
 
-        var language = labels[index][2];
+        let language = labels[index][2];
         if (language === "english") {
             return colors.blue;
         } else if (language === "spanish") {
@@ -348,9 +348,9 @@ function windowResized() {
 function updateUserInput() { // Update Selection
 
     selected = [];
-    var vals = userinput.value().replace("s", "").replace(" ", "").split(",").map(hash);
+    let vals = userinput.value().replace("s", "").replace(" ", "").split(",").map(hash);
     if (vals.length >= 1) {
-        for (var i = 0; i < labels.length; i++) {
+        for (let i = 0; i < labels.length; i++) {
             if (vals.includes(labels[i][0])) {
                 selected.push(i);
             }
