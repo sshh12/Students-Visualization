@@ -151,7 +151,7 @@ for id_ in ids:
 
 X_array = np.array(X)
 
-alg = TSNE(n_components=3, learning_rate=100, perplexity=35, n_iter=8000)
+alg = TSNE(n_components=3, learning_rate=10, perplexity=35, n_iter=8000)
 
 new_X = alg.fit_transform(X_array)
 
