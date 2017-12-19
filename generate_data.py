@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[ ]:
-
 ## Imports
 
 from db import DB
@@ -13,9 +11,6 @@ import numpy as np
 import hashlib
 import random
 
-
-# In[ ]:
-
 ## Connect to Database
 
 db = DB(username="",
@@ -24,9 +19,6 @@ db = DB(username="",
         port="",
         dbtype="",
         dbname="")
-
-
-# In[ ]:
 
 ## Categories
 
@@ -51,9 +43,6 @@ def get_class_type(name):
                 return subject
 
     return "other"
-
-
-# In[ ]:
 
 ## Collect Data
 
@@ -108,9 +97,6 @@ for index, row in db.tables.demo.all().iterrows():
     except Exception as e:
         print(e)
 
-
-# In[ ]:
-
 ## Analyze
 
 X = []
@@ -155,8 +141,6 @@ alg = TSNE(n_components=3, learning_rate=10, perplexity=35, n_iter=8000)
 
 new_X = alg.fit_transform(X_array)
 
-
-# In[ ]:
 
 ## Save
 
