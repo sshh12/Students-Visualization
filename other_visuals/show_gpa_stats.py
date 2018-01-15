@@ -52,7 +52,7 @@ def create_plot():
         elif "Woods" in school:
             return "#c6ab16"
         elif "Ridge" in school:
-            return "#208f20"
+            return "#006400"
         elif "Falls" in school:
             return "#42a02c"
         else:
@@ -67,7 +67,9 @@ def create_plot():
 
     legend = []
 
-    for class_ in sorted(class_map.keys()):
+    plt.style.use('ggplot')
+
+    for class_ in sorted(class_map, key=lambda key: class_map[key]):
 
         x, y = [], []
 
@@ -83,6 +85,8 @@ def create_plot():
 
     plt.legend(legend)
     plt.yticks([4.5, 5, 5.5, 6, 6.5, 7])
+    plt.ylabel('GPA')
+    plt.xlabel('Class Rank')
     plt.title('CFISD GPAs')
     plt.show()
 

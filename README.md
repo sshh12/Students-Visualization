@@ -24,3 +24,7 @@ purely abstract, they serve as an interesting way to visualize students and see 
 ### Screenshot
 
 ![screenshot](https://cloud.githubusercontent.com/assets/6625384/25551412/3e642c36-2c4a-11e7-84ca-030f6d723ba6.gif)
+
+## Other Visuals
+
+![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png)
