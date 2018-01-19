@@ -67,9 +67,9 @@ function centerPoints() { // Verify and Correct Points to be around (0,0,0)
         points[i][0] -= centX;
         points[i][1] -= centY;
         points[i][2] -= centZ;
-        points[i][0] *= 100;
-        points[i][1] *= 100;
-        points[i][2] *= 100;
+        points[i][0] *= 5000;
+        points[i][1] *= 5000;
+        points[i][2] *= 5000;
     }
 
 }
