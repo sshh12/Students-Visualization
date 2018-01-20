@@ -27,6 +27,6 @@ purely abstract, they serve as an interesting way to visualize students and see 
 
 ## Other Visuals
 
-![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png)
+![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png?)
 
-![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png)
+![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png?)
