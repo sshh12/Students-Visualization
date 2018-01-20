@@ -52,9 +52,11 @@ def create_plot():
         elif "Woods" in school:
             return "#c6ab16"
         elif "Ridge" in school:
-            return "#006400"
+            return "#1B5E20"
         elif "Falls" in school:
-            return "#42a02c"
+            return "#81C784"
+        elif "Langham" in school:
+            return "#B71C1C"
         else:
             return "#000000"
 
@@ -84,7 +86,7 @@ def create_plot():
         plt.scatter(x, y, c=get_school_color(school), marker=markers[grade], label=school)
 
     plt.legend(legend)
-    plt.yticks([4.5, 5, 5.5, 6, 6.5, 7])
+    plt.yticks([3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7])
     plt.ylabel('GPA')
     plt.xlabel('Class Rank')
     plt.title('CFISD GPAs')
