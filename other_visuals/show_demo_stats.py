@@ -53,7 +53,7 @@ def create_plot():
     make_bar(ax1, schools, 'School', limit=6, color=['#3949AB', '#D32F2F', '#1976D2', '#689F38', '#E64A19', '#00796B'])
     make_bar(ax2, grades, 'Grade Level', keys=['12', '11', '10', '9', '< 9'], color=['#00695C', '#00897B', '#26A69A', '#80CBC4', '#7E57C2'])
     make_bar(ax3, genders, 'Gender', color=['#E57373', '#64B5F6'])
-    make_bar(ax4, languages, 'Language', limit=6, color=['#3949AB', '#D32F2F', '#1976D2', '#689F38', '#E64A19', '#00796B'])
+    make_bar(ax4, languages, 'Language', limit=7, color=['#3949AB', '#D32F2F', '#1976D2', '#689F38', '#E64A19', '#00796B', '#CDDC39'])
 
     plt.subplots_adjust(hspace=.5)
 

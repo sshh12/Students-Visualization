@@ -4,7 +4,7 @@ import math
 
 user_map = {}                  # user id -> school, grade
 gpas_map = defaultdict(list)   # class#  -> [(pos, gpa, user id), ...]
-class_map = {}                 # class#  -> class name
+class_map = {}                 # class#  -> class names
 
 for index, row in cyranch_db.tables.demo.all().iterrows():
 
@@ -57,6 +57,8 @@ def create_plot():
             return "#81C784"
         elif "Langham" in school:
             return "#B71C1C"
+        elif "Springs" in school:
+            return "#E91E63"
         else:
             return "#000000"
 
