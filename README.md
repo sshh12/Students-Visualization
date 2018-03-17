@@ -16,7 +16,7 @@ visualize data collected from the [CyRanch App](https://github.com/sshh12/CyRanc
 ## What
 
 With the data collected from the [CyRanch App](https://github.com/sshh12/CyRanch-App-Server), every users
-grades were turned into a 7D vector based on their average grade in 7 fields: Science, Math, English, 
+grades were turned into a 7D vector based on their average grade in 7 fields: Science, Math, English,
 (Non-English) Language, Arts, Sports, and Social Studies. Using a dimensionality reduction algorithm, t-SNE, the data
 was used to create clusters of students based on their academic performance. While these 3D groupings are
 purely abstract, they serve as an interesting way to visualize students and see possible patterns.
@@ -27,6 +27,6 @@ purely abstract, they serve as an interesting way to visualize students and see 
 
 ## Other Visuals
 
-![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png)
+![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png?)
 
-![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png)
+![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png?)

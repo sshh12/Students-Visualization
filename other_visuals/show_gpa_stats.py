@@ -8,6 +8,9 @@ class_map = {}                 # class#  -> class names
 
 for index, row in cyranch_db.tables.demo.all().iterrows():
 
+    if row["gradelevel"] > 12:
+        continue
+
     user_map[row.user_id] = (row["school"], int(row["gradelevel"]))
 
 for index, row in cyranch_db.tables.rank.all().iterrows():
@@ -20,7 +23,7 @@ for class_ in gpas_map:
 
     # Fix db rows by using the latest (highest) grade levels
     grade_levels = [user_map[user_id][1] for _, _, user_id in gpas_map[class_]]
-    actual_grade_level = int(math.ceil(sum(grade_levels) / float(len(grade_levels))))
+    actual_grade_level = int(sum(grade_levels) / float(len(grade_levels)))
 
     class_map[class_] = user_map[gpas_map[class_][0][2]][0] + "##" + str(actual_grade_level)
 
@@ -59,6 +62,8 @@ def create_plot():
             return "#B71C1C"
         elif "Springs" in school:
             return "#E91E63"
+        elif "Lakes" in school:
+            return "#42f4f1"
         else:
             return "#000000"
 

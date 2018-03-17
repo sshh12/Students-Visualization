@@ -9,6 +9,9 @@ grades    = defaultdict(int)
 
 for index, row in cyranch_db.tables.demo.all().iterrows():
 
+    if row["gradelevel"] > 12:
+        continue
+
     school = row['school'].replace('Cypress ', 'Cy-').replace('High School', 'HS').replace('Middle School', 'MS')
     gender = row['gender'].title()
     language = row['language'].split(' ')[0].title()
