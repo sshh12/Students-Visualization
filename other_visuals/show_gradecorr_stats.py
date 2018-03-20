@@ -1,4 +1,5 @@
 from cyranchdb import cyranch_db
+from scipy.stats import linregress
 from collections import defaultdict
 import numpy as np
 
@@ -61,10 +62,14 @@ def create_plot():
                 x.append(avg_map[subject][user])
                 y.append(gpa_map[user])
 
-        subplots[i].scatter(x, y, c=colors[i], marker='*')
+        slope, intercept, r_value, p_value, std_err = linregress(x,y)
+        fit_fn = np.poly1d((slope, intercept))
+
+        subplots[i].plot(x, y, '.', x, fit_fn(x), '--', color=colors[i], markersize=6)
+
         subplots[i].set_xlim([0, 110])
         subplots[i].set_ylim([3, 7])
-        subplots[i].set_xlabel(subject)
+        subplots[i].set_xlabel('{}, r={:.2f}'.format(subject, r_value))
         subplots[i].set_ylabel('GPA')
 
         i += 1
