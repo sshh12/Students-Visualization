@@ -31,4 +31,6 @@ purely abstract, they serve as an interesting way to visualize students and see 
 
 ![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png?)
 
+![demo gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_gpa_stats.png?)
+
 ![grades](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gradecorr_stats.png?)
