@@ -22,7 +22,7 @@ for index, row in cyranch_db.tables.rank.all().iterrows():
 for class_ in gpas_map:
 
     # Fix db rows by using the latest (highest) grade levels
-    grade_levels = [user_map[user_id][1] for _, _, user_id in gpas_map[class_]]
+    grade_levels = [user_map[user_id][1] for _, _, user_id in gpas_map[class_] if user_id in user_map]
     actual_grade_level = int(sum(grade_levels) / float(len(grade_levels)))
 
     class_map[class_] = user_map[gpas_map[class_][0][2]][0] + "##" + str(actual_grade_level)
