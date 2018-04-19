@@ -31,6 +31,9 @@ def create_plot():
             x = []
 
             for user, data in users.items():
+			
+                if "lang" not in data: # filter incomplete demo data
+                    continue
 
                 if label.lower() in data[category]:
                     x.append(data["gpa"])
