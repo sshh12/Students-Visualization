@@ -36,3 +36,5 @@ purely abstract, they serve as an interesting way to visualize students and see 
 ![demo gpa plot](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_demo_plot_stats.png?)
 
 ![grades](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gradecorr_stats.png?)
+
+![grades overtime](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/grades_overtime.png?)
