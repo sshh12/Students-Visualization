@@ -27,14 +27,14 @@ purely abstract, they serve as an interesting way to visualize students and see 
 
 ## Other Visuals
 
-![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png?)
+![gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_stats.png)
 
-![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png?)
+![demo](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_stats.png)
 
-![demo gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_gpa_stats.png?)
+![demo gpa](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/demo_gpa_stats.png)
 
-![demo gpa plot](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_demo_plot_stats.png?)
+![demo gpa plot](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gpa_demo_plot_stats.png)
 
-![grades](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gradecorr_stats.png?)
+![grades](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/gradecorr_stats.png)
 
-![grades overtime](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/grades_overtime.png?)
+![grades overtime](https://raw.githubusercontent.com/sshh12/Students-Visualization/master/other_visuals/grades_overtime.png)
